@@ -4,7 +4,7 @@ const clean = require('postcss-clean')
 const webpack = require('webpack')
 const pkg = require('../package.json')
 const path = require('path')
-const ESLintPlugin = require('eslint-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin')
 
 process.traceDeprecation = true
 
@@ -107,6 +107,6 @@ module.exports = {
     new webpack.DefinePlugin({
       VERSION: '"' + pkg.version + '"',
     }),
-    new ESLintPlugin()
+    new ESLintPlugin(),
   ],
 }
