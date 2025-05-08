@@ -22,7 +22,7 @@
     }
   }
   .dom-viewer-container {
-    @include overflow-auto(y);
+    @include overflow-auto();
     height: 100%;
     padding: 5px 0;
   }
