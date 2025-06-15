@@ -1,3 +1,7 @@
+## 3.4.2 (15 Jun 2025)
+
+* fix: elements horizontal scrollbar [#504](https://github.com/liriliri/eruda/issues/504)
+
 ## 3.4.1 (10 Nov 2024)
 
 * fix: no copy and delete for shadow root
