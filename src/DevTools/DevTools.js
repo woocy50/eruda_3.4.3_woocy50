@@ -122,6 +122,11 @@ export default class DevTools extends Emitter {
         id: name,
         title: name,
       })
+    } else if (name === 'code') {
+      tab.insert(1, {
+        id: name,
+        title: name,
+      })
     } else {
       tab.insert(tab.length - 1, {
         id: name,
