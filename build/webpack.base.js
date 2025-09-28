@@ -1,6 +1,6 @@
 const autoprefixer = require('autoprefixer')
 const prefixer = require('postcss-prefixer')
-const clean = require('postcss-clean')
+const cssnano = require('cssnano')
 const webpack = require('webpack')
 const pkg = require('../package.json')
 const path = require('path')
@@ -13,14 +13,18 @@ const banner = pkg.name + ' v' + pkg.version + ' ' + pkg.homepage
 const postcssLoader = {
   loader: 'postcss-loader',
   options: {
-    plugins: [
-      prefixer({
-        prefix: '_',
-        ignore: [/luna-*/],
-      }),
-      autoprefixer,
-      clean(),
-    ],
+    postcssOptions: {
+      plugins: [
+        prefixer({
+          prefix: '_',
+          ignore: [/luna-*/],
+        }),
+        autoprefixer,
+        cssnano({
+          preset: 'default',
+        }),
+      ],
+    },
   },
 }
 
@@ -44,7 +48,9 @@ module.exports = {
     static: {
       directory: path.join(__dirname, '../test'),
     },
-    port: 8080,
+    port: 5000,
+    host: '0.0.0.0',
+    allowedHosts: 'all',
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
